@@ -23,7 +23,7 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 2rem;
   line-height: 1.6;
@@ -88,7 +88,7 @@ body {
 
 .blog-post {
   padding: 2rem;
-  background: var(--code-bg);
+  background: transparent;
   border-radius: 8px;
   border: 1px solid var(--hr-color);
 }

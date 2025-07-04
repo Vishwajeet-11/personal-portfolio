@@ -1,1 +1,205 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vishwajeet Bharadia's blog about scalable backend architecture and software engineering insights" />
+    <meta name="author" content="Vishwajeet Bharadia" />
+    <meta name="keywords" content="backend, scalability, software engineering, architecture, Node.js, MongoDB" />
+    <title>Blog - Vishwajeet Bharadia | Software Engineer</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+      
+      <nav class="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav-link">Portfolio</a>
+        <a href="blog.html" class="nav-link active" aria-current="page">Blog</a>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <h1 class="page-title">Blog</h1>
+
+      <article class="blog-post">
+        <header class="post-header">
+          <h2 class="post-title">If I Had to Build a Scalable Backend From Scratch</h2>
+          <time class="post-date" datetime="2024-01-01">January 1, 2024</time>
+        </header>
+
+        <div class="post-content">
+          <section class="post-section">
+            <h3>Starting with Constraints</h3>
+            <p>
+              If I had to build a scalable backend system from scratch, I wouldn't start
+              with code. I'd start with constraints. What does the system need to do?
+              How many users are we expecting in week one vs. month twelve? What's the
+              tradeoff between latency and consistency? Once those answers are clear,
+              everything else falls into place.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>API Design Philosophy</h3>
+            <p>
+              The first thing I'd define is the API surface. A well-designed API is the contract between the system and the
+              outside world. It should be consistent, versioned, and boring. REST for
+              public-facing endpoints, gRPC for internal service-to-service
+              communication — assuming performance is a priority. I'd design APIs with
+              future-proofing in mind: avoid exposing internal logic, keep endpoints
+              resource-based, and think about pagination, filtering, and error handling
+              from day one.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Data Architecture</h3>
+            <p>
+              For data, I'd go with a polyglot persistence approach.
+              PostgreSQL for anything relational — transactions, normalized data,
+              complex joins. MongoDB when I need schema flexibility or high-write
+              scenarios. Redis for caching frequently accessed data, implementing TTLs,
+              and handling rate limiting. And if there's streaming or event-driven
+              processing involved, Kafka or Redis Streams would be my go-to.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Building for Failure</h3>
+            <p>
+              Scalability doesn't just mean handling more users — it means handling failure. So I
+              build with failure in mind: retries with exponential backoff, timeouts on
+              every service call, circuit breakers to stop cascading outages.
+              Idempotency for critical operations so retries don't become problems.
+              Dead-letter queues to catch unprocessable messages. And I make sure every
+              service is horizontally scalable — no hard state, no sticky sessions, no
+              hidden bottlenecks.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Observability First</h3>
+            <p>
+              Every service I write comes with observability baked in. Logs are structured and queryable. Metrics are exposed via Prometheus.
+              Traces connect the dots across services so I can debug a slow request in
+              seconds. Dashboards and alerts aren't an afterthought — they're part of
+              the build.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Networking and Security</h3>
+            <p>
+              Networking is another layer people underestimate. I'd use
+              reverse proxies and load balancers early on — NGINX or Envoy — for traffic
+              management, SSL termination, and basic routing. Internal services would
+              live behind API gateways with auth policies and rate limits. Public
+              endpoints would be locked down with authentication, authorization, and
+              some form of abuse protection.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>CI/CD and Infrastructure</h3>
+            <p>
+              CI/CD is essential. I'd set up pipelines
+              that run tests, check linting, and deploy to staging automatically.
+              Deployments should be zero-downtime, preferably blue-green or rolling.
+              Infrastructure should be described as code — whether that's Terraform,
+              Pulumi, or something else. Configuration lives in version control. Secrets
+              don't.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Architecture Decisions</h3>
+            <p>
+              When it comes to architecture, I start with a monolith only if
+              speed is the top priority and the scope is small. Otherwise, I lean toward
+              modular services — independently deployable, loosely coupled, and
+              well-defined. Not everything needs to be microservices, but everything
+              should be modular.
+            </p>
+          </section>
+
+          <section class="post-section">
+            <h3>Designing for Scale</h3>
+            <p>
+              Lastly, I never assume scale — I design for it. That
+              means profiling early, load testing often, and watching real-world usage
+              patterns. I believe in simplicity over cleverness. Readable code, clear
+              interfaces, good documentation. The stuff that makes systems maintainable.
+              You don't need a complex system to scale — you need one that's designed
+              not to fall apart.
+            </p>
+          </section>
+        </div>
+
+        <footer class="post-footer">
+          <dl class="post-meta">
+            <dt>Technologies:</dt>
+            <dd>Node.js, Express, MongoDB, Socket.io, JWT</dd>
+            
+            <dt>Key Features:</dt>
+            <dd>Real-time driver-passenger matching, booking, fare calculation, JWT authentication</dd>
+            
+            <dt>Project Goal:</dt>
+            <dd>A scalable backend system similar to Uber/Lyft</dd>
+          </dl>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <section class="contact-info">
+        <h2>Contact</h2>
+        <address>
+          <p>
+            Email: 
+            <a
+              href="mailto:vishwajeetbharadiya12@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Send email to vishwajeetbharadiya12@gmail.com"
+            >
+              vishwajeetbharadiya12@gmail.com
+            </a>
+          </p>
+        </address>
+      </section>
+    </footer>
+
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("themeToggle");
+      const html = document.documentElement;
+
+      // Check for saved theme preference or default to light mode
+      const currentTheme = localStorage.getItem("theme") || "light";
+      html.setAttribute("data-theme", currentTheme);
+      updateButtonText();
+
+      // Toggle theme function
+      function toggleTheme() {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateButtonText();
+      }
+
+      // Update button text and icon
+      function updateButtonText() {
+        const theme = html.getAttribute("data-theme");
+        const isDark = theme === "dark";
+        themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+        themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
+      }
+
+      // Add click event listener
+      themeToggle.addEventListener("click", toggleTheme);
+    </script>
+  </body>
+</html>
