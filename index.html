@@ -12,6 +12,7 @@
     <nav class="navigation">
       <a href="index.html" class="nav-link active">Portfolio</a>
       <a href="blog.html" class="nav-link">Blog</a>
+      <a href="system-designs.html" class="nav-link">System Designs</a>
     </nav>
 
     <h1>Vishwajeet Bharadia</h1>
@@ -72,45 +73,45 @@
 
     <h3>UpRides — Real-Time Ride-Hailing Backend at Scale</h3>
     <p>
-      UpRides is a fully decoupled, event-driven backend inspired by ride-hailing giants like Uber and Lyft. The system prioritizes:
+      UpRides is a fully decoupled, event-driven backend inspired by
+      ride-hailing giants like Uber and Lyft. The system prioritizes:
     </p>
 
     <h4>Architecture</h4>
     <p>
-      Built with TypeScript and Node.js, using stateless, containerized microservices connected via:
-      • Kafka-based message queues and gRPC for service communication
-      • MongoDB as operational datastore for schema flexibility and write throughput
-      • Redis for caching, pub/sub messaging, and ephemeral state (e.g. driver locations)
-      • WebSocket layer for real-time client updates like driver pings and ETAs
+      Built with TypeScript and Node.js, using stateless, containerized
+      microservices connected via: • Kafka-based message queues and gRPC for
+      service communication • MongoDB as operational datastore for schema
+      flexibility and write throughput • Redis for caching, pub/sub messaging,
+      and ephemeral state (e.g. driver locations) • WebSocket layer for
+      real-time client updates like driver pings and ETAs
     </p>
 
     <h4>Resilience & Reliability</h4>
     <p>
-      Services are designed to fail gracefully with:
-      • Retries with exponential backoff
-      • Dead-letter queues
-      • Circuit breakers for partial outage handling
-      • Transaction-safe and idempotent booking flows
-      • JWT authentication and surge-aware fare computation
+      Services are designed to fail gracefully with: • Retries with exponential
+      backoff • Dead-letter queues • Circuit breakers for partial outage
+      handling • Transaction-safe and idempotent booking flows • JWT
+      authentication and surge-aware fare computation
     </p>
 
     <h4>Infrastructure & DevOps</h4>
     <p>
-      • Docker containerization
-      • Automated CI/CD via GitHub Actions
-      • Infrastructure as code
-      • Secure secrets management and rotation
+      • Docker containerization • Automated CI/CD via GitHub Actions •
+      Infrastructure as code • Secure secrets management and rotation
     </p>
 
     <h4>Real-World Focus</h4>
     <p>
-      • Hot path optimizations for high-volume matching
-      • Eventual consistency in the dispatch layer
-      • Clean separation of control and data planes
-      • Minimal latency and maximum uptime
+      • Hot path optimizations for high-volume matching • Eventual consistency
+      in the dispatch layer • Clean separation of control and data planes •
+      Minimal latency and maximum uptime
     </p>
     <ul>
-      <li><strong>Tech:</strong> Node.js, Express, MongoDB, Socket.io, JWT, TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions</li>
+      <li>
+        <strong>Tech:</strong> Node.js, Express, MongoDB, Socket.io, JWT,
+        TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions
+      </li>
       <li>
         <strong>Features:</strong> Real-time driver-passenger matching, booking,
         fare calculation, JWT auth
@@ -129,27 +130,47 @@
 
     <h2>Skills</h2>
     <ul>
-      <li><strong>Languages & Runtime:</strong> JavaScript, TypeScript, Node.js</li>
-      <li><strong>Frameworks & Libraries:</strong> Express, Socket.io, gRPC, WebSocket, Redis Client Libraries, Mongoose</li>
-      <li><strong>Databases & Message Queues:</strong> MongoDB, Redis, Apache Kafka, PostgreSQL</li>
       <li>
-        <strong>System Design & Architecture:</strong> Microservices, Event-Driven Architecture, CQRS, Message Queues, Distributed Systems, Real-time Systems, Caching Strategies
+        <strong>Languages & Runtime:</strong> JavaScript, TypeScript, Node.js
       </li>
       <li>
-        <strong>Backend Concepts:</strong> REST APIs, WebSocket Communication, Authentication/Authorization (JWT), Rate Limiting, Circuit Breaking, Idempotency, Dead Letter Queues, Eventual Consistency
+        <strong>Frameworks & Libraries:</strong> Express, Socket.io, gRPC,
+        WebSocket, Redis Client Libraries, Mongoose
       </li>
       <li>
-        <strong>Domain Knowledge:</strong> Geospatial Queries, Driver-Passenger Matching Algorithms, Dynamic Pricing, ETA Calculations, Real-time Location Tracking
+        <strong>Databases & Message Queues:</strong> MongoDB, Redis, Apache
+        Kafka, PostgreSQL
       </li>
       <li>
-        <strong>DevOps & Infrastructure:</strong> Docker, Kubernetes, CI/CD (GitHub Actions), Infrastructure as Code, Load Balancing, Auto-scaling
+        <strong>System Design & Architecture:</strong> Microservices,
+        Event-Driven Architecture, CQRS, Message Queues, Distributed Systems,
+        Real-time Systems, Caching Strategies
       </li>
       <li>
-        <strong>Monitoring & Observability:</strong> Logging, Metrics Collection, Distributed Tracing, Performance Monitoring, Error Tracking
+        <strong>Backend Concepts:</strong> REST APIs, WebSocket Communication,
+        Authentication/Authorization (JWT), Rate Limiting, Circuit Breaking,
+        Idempotency, Dead Letter Queues, Eventual Consistency
       </li>
-      <li><strong>Development Tools:</strong> Git, Postman, VS Code, MongoDB Compass, Redis CLI, Kafka Tools</li>
       <li>
-        <strong>Best Practices:</strong> Clean Code, API Design, Error Handling, Security Best Practices, Performance Optimization, Documentation
+        <strong>Domain Knowledge:</strong> Geospatial Queries, Driver-Passenger
+        Matching Algorithms, Dynamic Pricing, ETA Calculations, Real-time
+        Location Tracking
+      </li>
+      <li>
+        <strong>DevOps & Infrastructure:</strong> Docker, Kubernetes, CI/CD
+        (GitHub Actions), Infrastructure as Code, Load Balancing, Auto-scaling
+      </li>
+      <li>
+        <strong>Monitoring & Observability:</strong> Logging, Metrics
+        Collection, Distributed Tracing, Performance Monitoring, Error Tracking
+      </li>
+      <li>
+        <strong>Development Tools:</strong> Git, Postman, VS Code, MongoDB
+        Compass, Redis CLI, Kafka Tools
+      </li>
+      <li>
+        <strong>Best Practices:</strong> Clean Code, API Design, Error Handling,
+        Security Best Practices, Performance Optimization, Documentation
       </li>
     </ul>
 
