@@ -16,69 +16,27 @@
 }
 
 * {
+  box-sizing: border-box;
+}
+
+*:not(html):not(body) {
   transition: var(--transition);
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  max-width: 95%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   line-height: 1.6;
-}
-
-/* Header and Navigation */
-.site-header {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.navigation {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--hr-color);
-  flex-wrap: wrap;
-}
-
-.nav-link {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: var(--transition);
-  color: var(--text-color);
-  white-space: nowrap;
-}
-
-.nav-link:hover {
-  background: var(--code-bg);
-}
-
-.nav-link.active {
-  background: var(--link-color);
-  color: var(--bg-color);
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: var(--code-bg);
-  border: 1px solid var(--hr-color);
-  color: var(--text-color);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: var(--transition);
-  z-index: 1000;
-}
-
-.theme-toggle:hover {
-  background: var(--hr-color);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Main Content */
@@ -99,6 +57,7 @@ body {
   gap: 2rem;
   align-items: start;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .blog-post {
@@ -261,6 +220,8 @@ p {
   font-size: 0.9rem;
   transition: var(--transition);
   min-width: 100px;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .pagination-btn:hover:not(:disabled) {
@@ -302,8 +263,8 @@ p {
 /* Responsive Design */
 @media (max-width: 1200px) {
   body {
-    max-width: 98%;
-    padding: 0.8rem;
+    max-width: 95%;
+    padding: 1.5rem;
   }
   
   .blog-grid {
@@ -342,7 +303,7 @@ p {
 @media (max-width: 768px) {
   body {
     max-width: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
   }
   
   .page-title {
@@ -353,101 +314,114 @@ p {
   .blog-post {
     padding: 1rem;
     font-size: 0.9rem;
+    word-wrap: break-word;
   }
   
   .post-title {
     font-size: 1.1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
   }
   
   .post-section h4 {
     font-size: 1rem;
   }
   
-  .navigation {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: flex-start;
-  }
-  
-  .nav-link {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
-  }
-  
-  .theme-toggle {
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+  .post-section p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   
   .pagination {
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .pagination-btn {
-    width: 100%;
-    max-width: 200px;
+    min-width: 120px;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
   }
   
   .post-meta {
     grid-template-columns: 1fr;
-    gap: 0.3rem;
+    gap: 0.5rem;
   }
   
   .post-meta dt {
     margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .blog-grid {
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   body {
-    padding: 0.3rem;
+    padding: 0.5rem;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  .site-header {
+    padding-top: 3.5rem;
+    margin-bottom: 1rem;
   }
   
   .page-title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    padding: 0;
+    line-height: 1.3;
   }
   
   .blog-post {
-    padding: 0.8rem;
-    font-size: 0.85rem;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   .post-title {
-    font-size: 1rem;
-  }
-  
-  .post-section h4 {
-    font-size: 0.95rem;
-  }
-  
-  .navigation {
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.3;
     padding-bottom: 0.5rem;
   }
   
-  .nav-link {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
+  .post-section {
+    margin-bottom: 1.25rem;
   }
   
-  .theme-toggle {
-    top: 0.3rem;
-    right: 0.3rem;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.75rem;
+  .post-section h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .pagination {
+    margin-top: 2rem;
+    gap: 0.75rem;
   }
   
   .pagination-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+    flex: 1;
+    max-width: 150px;
   }
   
   .page-info {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    width: 100%;
+    order: -1;
   }
   
   h1 {
@@ -455,19 +429,79 @@ p {
   }
   
   h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
   h3, h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   
   .site-footer {
     margin-top: 2rem;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
   
   .contact-info h2 {
+    font-size: 1.1rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.95rem;
+    word-wrap: break-word;
+  }
+  
+  .blog-grid {
+    gap: 1.5rem;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+  }
+  
+  .post-meta dt {
+    font-weight: 600;
+  }
+}
+
+/* Extra small devices (phones in portrait, less than 360px) */
+@media (max-width: 360px) {
+  body {
+    padding: 0.4rem;
+    font-size: 15px;
+  }
+  
+  .page-title {
+    font-size: 1.3rem;
+  }
+  
+  .post-title {
     font-size: 1rem;
   }
+  
+  .nav-link {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  
+  .theme-toggle {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .pagination-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+/* Prevent horizontal scroll on all devices */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure images and media are responsive */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
 } 
