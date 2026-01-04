@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>System Designs – Vishwajeet Bharadia</title>
+    <link rel="stylesheet" href="assets/css/navbar.css" />
     <link rel="stylesheet" href="assets/css/index.css" />
     <style>
       .grid-container {
@@ -67,13 +68,7 @@
     </style>
   </head>
   <body>
-    <button class="theme-toggle" id="themeToggle">🌙 Dark Mode</button>
-
-    <nav class="navigation">
-      <a href="index.html" class="nav-link">Portfolio</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="system-designs.html" class="nav-link active">System Designs</a>
-    </nav>
+    <script src="assets/js/navbar.js"></script>
 
     <h1>System Design Diagrams</h1>
     <p>Click an image to view it in full-screen mode.</p>
@@ -123,28 +118,5 @@
       <a href="index.html">← Back to Portfolio</a>
     </p>
 
-    <script>
-      const themeToggle = document.getElementById("themeToggle");
-      const html = document.documentElement;
-      const currentTheme = localStorage.getItem("theme") || "light";
-      html.setAttribute("data-theme", currentTheme);
-      updateButtonText();
-
-      function toggleTheme() {
-        const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateButtonText();
-      }
-
-      function updateButtonText() {
-        const theme = html.getAttribute("data-theme");
-        themeToggle.textContent =
-          theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
-      }
-
-      themeToggle.addEventListener("click", toggleTheme);
-    </script>
   </body>
 </html>
