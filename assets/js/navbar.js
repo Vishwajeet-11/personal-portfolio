@@ -19,8 +19,10 @@
     
     const navLinks = [
       { href: 'index.html', text: 'Portfolio' },
+      { href: 'projects.html', text: 'Projects' },
       { href: 'blog.html', text: 'Blog' },
-      { href: 'system-designs.html', text: 'System Designs' }
+      { href: 'system-designs.html', text: 'System Designs' },
+      { href: 'testimonial.html', text: 'Testimonials' }
     ];
     
     navLinks.forEach(linkData => {

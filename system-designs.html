@@ -15,10 +15,10 @@
         margin-top: 2rem;
       }
       .grid-item {
-        border: 1px solid #ccc;
+        border: 1px solid var(--hr-color);
         border-radius: 10px;
         padding: 0.5rem;
-        background: var(--card-bg, #fff);
+        background: var(--code-bg);
         text-align: center;
         transition: transform 0.2s ease;
         cursor: pointer;
@@ -34,6 +34,7 @@
       .caption {
         margin-top: 0.5rem;
         font-size: 0.9rem;
+        color: var(--text-color);
       }
 
       /* Fullscreen modal */
@@ -66,6 +67,36 @@
         cursor: pointer;
         text-decoration: none;
       }
+
+      /* Theme-aware image switching for KYC verification and Netflix */
+      .kyc-img,
+      .kyc-img-lightbox,
+      .netflix-img,
+      .netflix-img-lightbox {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Hide dark image in light mode */
+      .theme-dark {
+        display: none;
+      }
+
+      /* Hide light image in dark mode */
+      [data-theme="dark"] .theme-light {
+        display: none;
+      }
+
+      /* Show dark image in dark mode */
+      [data-theme="dark"] .theme-dark {
+        display: block;
+      }
+
+      /* Ensure grid item images work correctly */
+      .grid-item .kyc-img,
+      .grid-item .netflix-img {
+        border-radius: 6px;
+      }
     </style>
   </head>
   <body>
@@ -84,17 +115,47 @@
         </a>
         <div class="caption">E-commerce Application</div>
       </div>
-      <div class="grid-item">
+      <!-- <div class="grid-item">
         <a href="#img2">
           <img src="assets/images/bookstore.png" alt="Bookstore REST API" />
         </a>
         <div class="caption">Bookstore REST API</div>
-      </div>
-      <div class="grid-item">
+      </div> -->
+      <!-- <div class="grid-item">
         <a href="#img3">
           <img src="assets/images/chatapp.png" alt="Chat Application" />
         </a>
         <div class="caption">Chat Application</div>
+      </div> -->
+      <div class="grid-item">
+        <a href="#img4">
+          <img 
+            src="assets/images/kyc-verification.png" 
+            alt="KYC and Face-Recognition System" 
+            class="kyc-img theme-light"
+          />
+          <img 
+            src="assets/images/kyc-verification-dark.png" 
+            alt="KYC and Face-Recognition System" 
+            class="kyc-img theme-dark"
+          />
+        </a>
+        <div class="caption">KYC and Face-Recognition System</div>
+      </div>
+      <div class="grid-item">
+        <a href="#img5">
+          <img 
+            src="assets/images/netflix-system-design.png" 
+            alt="Netflix System Design" 
+            class="netflix-img theme-light"
+          />
+          <img 
+            src="assets/images/netflix-system-design-dark.png" 
+            alt="Netflix System Design" 
+            class="netflix-img theme-dark"
+          />
+        </a>
+        <div class="caption">Netflix System Design</div>
       </div>
     </div>
 
@@ -113,6 +174,32 @@
     <div id="img3" class="lightbox">
       <a href="#" class="close-btn">✖</a>
       <img src="assets/images/chatapp.png" alt="Chat Application" />
+    </div>
+    <div id="img4" class="lightbox">
+      <a href="#" class="close-btn">✖</a>
+      <img 
+        src="assets/images/kyc-verification.png" 
+        alt="KYC and Face-Recognition System" 
+        class="kyc-img-lightbox theme-light"
+      />
+      <img 
+        src="assets/images/kyc-verification-dark.png" 
+        alt="KYC and Face-Recognition System" 
+        class="kyc-img-lightbox theme-dark"
+      />
+    </div>
+    <div id="img5" class="lightbox">
+      <a href="#" class="close-btn">✖</a>
+      <img 
+        src="assets/images/netflix-system-design.png" 
+        alt="Netflix System Design" 
+        class="netflix-img-lightbox theme-light"
+      />
+      <img 
+        src="assets/images/netflix-system-design-dark.png" 
+        alt="Netflix System Design" 
+        class="netflix-img-lightbox theme-dark"
+      />
     </div>
 
     <p style="margin-top: 2rem">

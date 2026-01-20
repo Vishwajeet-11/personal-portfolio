@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/terminal.svg" />
+    <title>Projects – Vishwajeet Bharadia</title>
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+  </head>
+  <body>
+    <script src="assets/js/navbar.js"></script>
+
+    <h1 class="projects-header">Projects</h1>
+    <p class="projects-subtitle">
+      A showcase of my backend engineering work, focusing on scalable systems and real-time applications.
+    </p>
+
+    <div class="projects-container">
+      <!-- Project 1: UpRides -->
+      <div class="project-card">
+        <h3 class="project-title">UpRides — Real-Time Ride-Hailing Backend at Scale</h3>
+        <p class="project-description">
+          A fully decoupled, event-driven backend inspired by ride-hailing giants like Uber and Lyft. 
+          The system prioritizes scalability, resilience, and real-time performance.
+        </p>
+
+        <div class="project-section">
+          <h4 class="section-title">Architecture</h4>
+          <p class="section-content">
+            Built with TypeScript and Node.js, using stateless, containerized microservices connected via:
+          </p>
+          <ul class="section-list">
+            <li>Kafka-based message queues and gRPC for service communication</li>
+            <li>MongoDB as operational datastore for schema flexibility and write throughput</li>
+            <li>Redis for caching, pub/sub messaging, and ephemeral state (e.g. driver locations)</li>
+            <li>WebSocket layer for real-time client updates like driver pings and ETAs</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4 class="section-title">Resilience & Reliability</h4>
+          <p class="section-content">
+            Services are designed to fail gracefully with:
+          </p>
+          <ul class="section-list">
+            <li>Retries with exponential backoff</li>
+            <li>Dead-letter queues</li>
+            <li>Circuit breakers for partial outage handling</li>
+            <li>Transaction-safe and idempotent booking flows</li>
+            <li>JWT authentication and surge-aware fare computation</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4 class="section-title">Infrastructure & DevOps</h4>
+          <ul class="section-list">
+            <li>Docker containerization</li>
+            <li>Automated CI/CD via GitHub Actions</li>
+            <li>Infrastructure as code</li>
+            <li>Secure secrets management and rotation</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <h4 class="section-title">Real-World Focus</h4>
+          <ul class="section-list">
+            <li>Hot path optimizations for high-volume matching</li>
+            <li>Eventual consistency in the dispatch layer</li>
+            <li>Clean separation of control and data planes</li>
+            <li>Minimal latency and maximum uptime</li>
+          </ul>
+        </div>
+
+        <div class="project-tech">
+          <div class="tech-item">
+            <strong>Tech Stack:</strong> Node.js, Express, MongoDB, Socket.io, JWT, TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions
+          </div>
+          <div class="tech-item">
+            <strong>Features:</strong> Real-time driver-passenger matching, booking, fare calculation, JWT auth
+          </div>
+          <div class="tech-item">
+            <strong>Goal:</strong> A scalable backend like Uber/Lyft
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Bookstore REST API (commented out but can be uncommented) -->
+      <!--
+      <div class="project-card">
+        <h3 class="project-title">Bookstore REST API</h3>
+        <p class="project-description">
+          A secure and well-designed RESTful API for managing bookstore operations with role-based access control.
+        </p>
+        <div class="project-tech">
+          <div class="tech-item">
+            <strong>Tech Stack:</strong> Node.js, Express, JWT, File-based persistence
+          </div>
+          <div class="tech-item">
+            <strong>Features:</strong> Role-based access, user auth, CRUD operations, middleware
+          </div>
+          <div class="tech-item">
+            <strong>Goal:</strong> Secure and clean API design
+          </div>
+        </div>
+      </div>
+      -->
+    </div>
+
+    <p style="margin-top: 2rem">
+      <a href="index.html">← Back to Portfolio</a>
+    </p>
+
+  </body>
+</html>
