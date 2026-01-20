@@ -68,11 +68,13 @@
         text-decoration: none;
       }
 
-      /* Theme-aware image switching for KYC verification and Netflix */
+      /* Theme-aware image switching for KYC verification, Netflix, and Chat App */
       .kyc-img,
       .kyc-img-lightbox,
       .netflix-img,
-      .netflix-img-lightbox {
+      .netflix-img-lightbox,
+      .chat-app-img,
+      .chat-app-lightbox {
         max-width: 100%;
         height: auto;
       }
@@ -94,7 +96,8 @@
 
       /* Ensure grid item images work correctly */
       .grid-item .kyc-img,
-      .grid-item .netflix-img {
+      .grid-item .netflix-img,
+      .grid-item .chat-app-img {
         border-radius: 6px;
       }
     </style>
@@ -157,6 +160,21 @@
         </a>
         <div class="caption">Netflix System Design</div>
       </div>
+      <div class="grid-item">
+        <a href="#img6">
+          <img 
+            src="assets/images/chat-app.png" 
+            alt="Distributed Messaging Platform" 
+            class="chat-app-img theme-light"
+          />
+          <img 
+            src="assets/images/chat-app-dark.png" 
+            alt="Distributed Messaging Platform" 
+            class="chat-app-img theme-dark"
+          />
+        </a>
+        <div class="caption">Distributed Messaging Platform</div>
+      </div>
     </div>
 
     <!-- Lightbox modals -->
@@ -201,7 +219,19 @@
         class="netflix-img-lightbox theme-dark"
       />
     </div>
-
+    <div id="img6" class="lightbox">
+      <a href="#" class="close-btn">✖</a>
+      <img 
+        src="assets/images/chat-app.png" 
+        alt="Distributed messaging platform" 
+        class="chat-app-lightbox theme-light"
+      />
+      <img 
+        src="assets/images/chat-app-dark.png" 
+        alt="Distributed messaging platform" 
+        class="chat-app-lightbox theme-dark"
+      />
+    </div>
     <p style="margin-top: 2rem">
       <a href="index.html">← Back to Portfolio</a>
     </p>
