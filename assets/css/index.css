@@ -7,6 +7,12 @@
   --transition: all 0.3s ease;
 }
 
+/* Apple-style smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 [data-theme="dark"] {
   --bg-color: #000;
   --text-color: #fff;
@@ -37,6 +43,9 @@ body {
   word-wrap: break-word;
   overflow-x: hidden;
   width: 100%;
+  /* Apple-style smooth scrolling and momentum */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: smooth;
 }
 
 h1, h2, h3 {
