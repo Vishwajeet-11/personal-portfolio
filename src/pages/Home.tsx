@@ -52,7 +52,7 @@ export default function Home() {
           </svg>
         </a>
         <a
-          href="/vishwajeet_bharadia_backend_resume.pdf"
+          href="https://drive.google.com/file/d/1Bh3PU2pWaSNsRBcFffWzVkFFqflQit81/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
