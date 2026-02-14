@@ -81,6 +81,38 @@ a:hover {
   opacity: 0.8;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+  background: var(--link-color);
+  color: var(--bg-color);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.social-links svg {
+  width: 22px;
+  height: 22px;
+}
+
 .view-more-btn {
   display: inline-block;
   background: var(--link-color);
@@ -142,11 +174,17 @@ strong {
 @media (max-width: 480px) {
   body {
     padding: 0.5rem;
+    padding-left: max(0.5rem, env(safe-area-inset-left));
+    padding-right: max(0.5rem, env(safe-area-inset-right));
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
   }
   
   h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
     font-size: 1.5rem;
   }
 }
@@ -159,4 +197,212 @@ html, body {
 img, video, iframe {
   max-width: 100%;
   height: auto;
+}
+
+/* Meeting scheduler - icon with glow + hover panel */
+.meeting-scheduler-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.meeting-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-color);
+  border: 2px solid rgba(34, 197, 94, 0.6);
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.6), 0 0 24px rgba(34, 197, 94, 0.3), inset 0 0 8px rgba(34, 197, 94, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.meeting-icon-btn:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.9), 0 0 40px rgba(34, 197, 94, 0.5), inset 0 0 12px rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.9);
+  transform: translateY(-2px);
+}
+
+.meeting-icon-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.meeting-panel {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  z-index: 1000;
+  width: 420px;
+  max-width: calc(100vw - 2rem);
+  background: var(--bg-color);
+  border: 1px solid var(--hr-color);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: meetingPanelIn 0.2s ease;
+}
+
+@keyframes meetingPanelIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .meeting-panel {
+    animation: meetingPanelInDesktop 0.2s ease;
+  }
+}
+
+@keyframes meetingPanelInDesktop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.meeting-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--hr-color);
+  background: var(--code-bg);
+}
+
+.meeting-panel-header span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.meeting-panel-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.meeting-panel-close:hover {
+  opacity: 1;
+}
+
+.calcom-embed-wrapper {
+  width: 100%;
+  min-height: 580px;
+  overflow: hidden;
+}
+
+.calcom-embed {
+  width: 100%;
+  height: 580px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    gap: 0.75rem;
+  }
+
+  .social-links a,
+  .meeting-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social-links svg,
+  .meeting-icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .meeting-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 1.5rem);
+    max-width: 420px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meeting-panel .calcom-embed-wrapper {
+    flex: 1;
+    min-height: 300px;
+    max-height: calc(85vh - 50px);
+    overflow: auto;
+  }
+
+  .meeting-panel .calcom-embed {
+    min-height: 350px;
+    height: 100%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    gap: 0.5rem;
+  }
+
+  .social-links a,
+  .meeting-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .meeting-panel {
+    width: calc(100vw - 1rem);
+    max-height: 90vh;
+  }
+
+  .meeting-panel .calcom-embed-wrapper {
+    min-height: 280px;
+    max-height: calc(90vh - 50px);
+  }
+
+  .meeting-panel .calcom-embed {
+    min-height: 320px;
+  }
+
+  .meeting-panel-header {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .meeting-panel-header span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .social-links a,
+  .meeting-icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-links svg,
+  .meeting-icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }

@@ -1,6 +1,6 @@
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -213,6 +213,7 @@
 @media (max-width: 768px) {
   .projects-container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .project-card {
@@ -221,5 +222,44 @@
 
   .project-title {
     font-size: 1.3rem;
+  }
+
+  .project-card.expanded {
+    width: 95%;
+    max-height: 90vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .project-card.expanded {
+    width: 98%;
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 360px) {
+  .project-card {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
   }
 }

@@ -1,5 +1,33 @@
 /* Navbar Styles - Shared across all pages */
 
+/* Mobile top bar black background - hidden on desktop */
+.mobile-top-bar-bg {
+  display: none;
+}
+
+/* DateTime display - top left */
+.datetime-display {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 999;
+  font-size: 0.7rem;
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+  color: var(--link-color);
+  opacity: 0.9;
+  pointer-events: none;
+  line-height: 1.3;
+  max-width: calc(100vw - 5rem);
+}
+
+.datetime-display .datetime-suffix {
+  color: #999;
+}
+
+[data-theme="dark"] .datetime-display .datetime-suffix {
+  color: #888;
+}
+
 /* Header and Navigation */
 .site-header {
   position: relative;
@@ -281,8 +309,88 @@
 }
 
 @media (max-width: 768px) {
+  /* Black bar behind top navbar elements for visibility when scrolling */
+  .mobile-top-bar-bg {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(3.5rem + env(safe-area-inset-top, 0px));
+    background: #000;
+    z-index: 997;
+  }
+
+  .datetime-display {
+    top: 2.75rem;
+    left: 0.5rem;
+    font-size: 0.62rem;
+    max-width: calc(100vw - 4rem);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    color: #fff !important;
+    z-index: 999;
+  }
+
+  .datetime-display .datetime-suffix {
+    color: #aaa !important;
+  }
+
+  [data-theme="dark"] .datetime-display .datetime-suffix {
+    color: #aaa !important;
+  }
+
   .hamburger-btn {
     display: flex;
+    z-index: 1001;
+  }
+
+  .hamburger-btn .hamburger-line {
+    background: #fff !important;
+  }
+
+  .theme-toggle {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    z-index: 1000;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  /* Mobile menu - black background */
+  .mobile-menu {
+    background: #000 !important;
+    z-index: 1000;
+  }
+
+  .mobile-menu-header {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-close-btn {
+    color: #fff !important;
+  }
+
+  .mobile-close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .mobile-nav-link {
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav-link.active {
+    background: var(--link-color);
+    color: #fff !important;
   }
   
   .site-header {
@@ -306,6 +414,15 @@
 }
 
 @media (max-width: 480px) {
+  .datetime-display {
+    top: 2.5rem;
+    left: 0.5rem;
+    font-size: 0.52rem;
+    max-width: calc(100vw - 3.5rem);
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+  }
+
   .site-header {
     padding-top: 4rem;
     margin-bottom: 1rem;
@@ -333,5 +450,12 @@
   .mobile-nav-link {
     font-size: 1.1rem;
     padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .datetime-display {
+    font-size: 0.48rem;
+    max-width: calc(100vw - 3rem);
   }
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
+import DateTimeDisplay from './DateTimeDisplay'
 import '../styles/navbar.css'
 
 const navLinks = [
@@ -45,6 +46,8 @@ export default function Navbar() {
 
   return (
     <>
+      <div className="mobile-top-bar-bg" aria-hidden="true" />
+      <DateTimeDisplay />
       <header className="site-header">
         <button
           className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
