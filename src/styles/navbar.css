@@ -1,0 +1,337 @@
+/* Navbar Styles - Shared across all pages */
+
+/* Header and Navigation */
+.site-header {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--hr-color);
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+  color: var(--text-color);
+  white-space: nowrap;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  touch-action: manipulation;
+  font-size: 1rem;
+}
+
+.nav-link:hover {
+  background: var(--code-bg);
+}
+
+.nav-link.active {
+  background: var(--link-color);
+  color: var(--bg-color);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--code-bg);
+  border: 1px solid var(--hr-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  z-index: 1000;
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+.theme-toggle:hover {
+  background: var(--hr-color);
+}
+
+/* Hamburger Button - Hidden on desktop */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  transform-origin: center;
+}
+
+/* Hamburger animation when active */
+.hamburger-btn.active .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger-btn.active .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Nav Overlay */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
+  z-index: 999;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--hr-color);
+}
+
+.mobile-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.mobile-close-btn:hover {
+  background: var(--code-bg);
+}
+
+/* Mobile Nav Links - Apple Timer Style Scroll */
+.mobile-nav-links {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--hr-color);
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.mobile-nav-link::after {
+  content: '→';
+  position: absolute;
+  right: 2rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link:hover::after,
+.mobile-nav-link:focus::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+  background: var(--code-bg);
+  padding-left: 2.5rem;
+}
+
+.mobile-nav-link.active {
+  background: var(--link-color);
+  color: var(--bg-color);
+}
+
+.mobile-nav-link.active::after {
+  color: var(--bg-color);
+}
+
+/* Animation for mobile links */
+.mobile-nav-link.animate-in {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scrollbar styling for mobile menu */
+.mobile-nav-links::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-nav-links::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-nav-links::-webkit-scrollbar-thumb {
+  background: var(--hr-color);
+  border-radius: 4px;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 1200px) {
+  .site-header {
+    max-width: 95%;
+    padding: 0 1rem;
+  }
+  
+  .navigation {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .site-header {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+    padding-top: 3.5rem;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hamburger-btn {
+    top: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .theme-toggle {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    min-height: 44px;
+    min-width: auto;
+  }
+  
+  .mobile-menu {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .mobile-nav-link {
+    font-size: 1.1rem;
+    padding: 1.5rem 1.5rem;
+  }
+}

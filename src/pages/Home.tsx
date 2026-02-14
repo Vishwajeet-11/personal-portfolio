@@ -1,0 +1,184 @@
+import { Link } from 'react-router-dom'
+
+export default function Home() {
+  return (
+    <>
+      <h1>Vishwajeet Bharadia</h1>
+      <p>
+        <strong>Software Engineer</strong> — I build backend systems, real-time
+        apps, and RESTful APIs.
+      </p>
+      <p>
+        <a
+          href="https://github.com/Vishwajeet-11"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+        {' | '}
+        <a
+          href="https://linkedin.com/in/vishwajeetbharadia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        {' | '}
+        <a
+          href="/vishwajeet_bharadia_backend_resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Resume
+        </a>
+      </p>
+
+      <hr />
+      <p>
+        I'm a backend engineer who builds scalable, resilient systems designed to
+        handle real-world load. I specialize in designing RESTful and gRPC-based
+        APIs, architecting pub/sub systems with Kafka and Redis Streams, and
+        optimizing data flow with asynchronous patterns.
+      </p>
+
+      <p>
+        I've worked across both SQL (PostgreSQL) and NoSQL (MongoDB) databases,
+        tuned queries for performance, and implemented caching layers using Redis
+        to reduce latency and offload load from primary datastores.
+      </p>
+
+      <p>
+        Beyond the basics, I've implemented reverse proxies with NGINX, designed
+        fault-tolerant service meshes, and built modular microservices that
+        communicate over protocol buffers. I'm comfortable with concepts like CAP
+        theorem, distributed tracing, rate-limiting, horizontal scaling,
+        idempotency, circuit breakers, and eventual consistency.
+      </p>
+
+      <p>
+        Every service I write is built with observability in mind — logs, metrics,
+        alerts, and structured tracing included from day one.
+      </p>
+
+      <hr />
+      <h2>Projects</h2>
+
+      <h3>UpRides — Real-Time Ride-Hailing Backend at Scale</h3>
+      <p>
+        UpRides is a fully decoupled, event-driven backend inspired by
+        ride-hailing giants like Uber and Lyft. The system prioritizes:
+      </p>
+
+      <h4>Architecture</h4>
+      <p>
+        Built with TypeScript and Node.js, using stateless, containerized
+        microservices connected via: • Kafka-based message queues and gRPC for
+        service communication • MongoDB as operational datastore for schema
+        flexibility and write throughput • Redis for caching, pub/sub messaging,
+        and ephemeral state (e.g. driver locations) • WebSocket layer for
+        real-time client updates like driver pings and ETAs
+      </p>
+
+      <h4>Resilience & Reliability</h4>
+      <p>
+        Services are designed to fail gracefully with: • Retries with exponential
+        backoff • Dead-letter queues • Circuit breakers for partial outage
+        handling • Transaction-safe and idempotent booking flows • JWT
+        authentication and surge-aware fare computation
+      </p>
+
+      <h4>Infrastructure & DevOps</h4>
+      <p>
+        • Docker containerization • Automated CI/CD via GitHub Actions •
+        Infrastructure as code • Secure secrets management and rotation
+      </p>
+
+      <h4>Real-World Focus</h4>
+      <p>
+        • Hot path optimizations for high-volume matching • Eventual consistency
+        in the dispatch layer • Clean separation of control and data planes •
+        Minimal latency and maximum uptime
+      </p>
+      <ul>
+        <li>
+          <strong>Tech:</strong> Node.js, Express, MongoDB, Socket.io, JWT,
+          TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions
+        </li>
+        <li>
+          <strong>Features:</strong> Real-time driver-passenger matching, booking,
+          fare calculation, JWT auth
+        </li>
+        <li><strong>Goal:</strong> A scalable backend like Uber/Lyft</li>
+      </ul>
+
+      <p style={{ marginTop: '2rem' }}>
+        <Link to="/projects" className="view-more-btn">
+          View More Projects →
+        </Link>
+      </p>
+
+      <hr />
+
+      <h2>Skills</h2>
+      <ul>
+        <li>
+          <strong>Languages & Runtime:</strong> JavaScript, TypeScript, Node.js
+        </li>
+        <li>
+          <strong>Frameworks & Libraries:</strong> Express, Socket.io, gRPC,
+          WebSocket, Redis Client Libraries, Mongoose
+        </li>
+        <li>
+          <strong>Databases & Message Queues:</strong> MongoDB, Redis, Apache
+          Kafka, PostgreSQL
+        </li>
+        <li>
+          <strong>System Design & Architecture:</strong> Microservices,
+          Event-Driven Architecture, CQRS, Message Queues, Distributed Systems,
+          Real-time Systems, Caching Strategies
+        </li>
+        <li>
+          <strong>Backend Concepts:</strong> REST APIs, WebSocket Communication,
+          Authentication/Authorization (JWT), Rate Limiting, Circuit Breaking,
+          Idempotency, Dead Letter Queues, Eventual Consistency
+        </li>
+        <li>
+          <strong>Domain Knowledge:</strong> Geospatial Queries, Driver-Passenger
+          Matching Algorithms, Dynamic Pricing, ETA Calculations, Real-time
+          Location Tracking
+        </li>
+        <li>
+          <strong>DevOps & Infrastructure:</strong> Docker, Kubernetes, CI/CD
+          (GitHub Actions), Infrastructure as Code, Load Balancing, Auto-scaling
+        </li>
+        <li>
+          <strong>Monitoring & Observability:</strong> Logging, Metrics
+          Collection, Distributed Tracing, Performance Monitoring, Error Tracking
+        </li>
+        <li>
+          <strong>Development Tools:</strong> Git, Postman, VS Code, MongoDB
+          Compass, Redis CLI, Kafka Tools
+        </li>
+        <li>
+          <strong>Best Practices:</strong> Clean Code, API Design, Error Handling,
+          Security Best Practices, Performance Optimization, Documentation
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Contact</h2>
+      <p>
+        Email:{' '}
+        <a
+          href="mailto:vishwajeetbharadiya12@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          vishwajeetbharadiya12@gmail.com
+        </a>
+      </p>
+    </>
+  )
+}
