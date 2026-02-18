@@ -167,7 +167,7 @@ export default function Home() {
       </p>
       <ul>
         <li>
-          <strong>Tech:</strong> Node.js, Express, MongoDB, Socket.io, JWT,
+          <strong>Tech:</strong> Go, Node.js, JavaScript, Express, MongoDB, Socket.io, JWT,
           TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions
         </li>
         <li>
@@ -188,7 +188,7 @@ export default function Home() {
       <h2>Skills</h2>
       <ul>
         <li>
-          <strong>Languages & Runtime:</strong> JavaScript, TypeScript, Node.js
+          <strong>Languages & Runtime:</strong> Go, JavaScript, TypeScript, Node.js
         </li>
         <li>
           <strong>Frameworks & Libraries:</strong> Express, Socket.io, gRPC,

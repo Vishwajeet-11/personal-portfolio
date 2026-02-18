@@ -67,7 +67,7 @@ export const projects: Project[] = [
       {
         label: 'Tech Stack:',
         value:
-          'Node.js, Express, MongoDB, Socket.io, JWT, TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions',
+          'Go, Node.js, JavaScript, Express, MongoDB, Socket.io, JWT, TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions',
       },
       {
         label: 'Features:',
@@ -154,7 +154,7 @@ export const projects: Project[] = [
       {
         label: 'Tech Stack:',
         value:
-          'Node.js, RabbitMQ, Flink, S3, CDN, Cassandra, B-Tree Database, Distributed Search Index, CDC, Message Queues',
+          'Go, Node.js, JavaScript, RabbitMQ, Flink, S3, CDN, Cassandra, B-Tree Database, Distributed Search Index, CDC, Message Queues',
       },
       {
         label: 'Features:',
@@ -249,7 +249,7 @@ export const projects: Project[] = [
     tech: [
       {
         label: 'Tech Stack:',
-        value: 'Node.js, Kafka, Flink, HBase, MySQL, WebSockets, ZooKeeper, Consistent Hashing',
+        value: 'Go, Node.js, JavaScript, Kafka, Flink, HBase, MySQL, WebSockets, ZooKeeper, Consistent Hashing',
       },
       {
         label: 'Features:',
