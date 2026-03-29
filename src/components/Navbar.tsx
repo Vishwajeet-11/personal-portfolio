@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from '../contexts/ThemeContext'
 import DateTimeDisplay from './DateTimeDisplay'
+import logoUpdated from '../assets/logo-updated.png'
 import '../styles/navbar.css'
 
 const navLinks = [
@@ -75,7 +76,24 @@ export default function Navbar() {
   return (
     <>
       <div className="mobile-top-bar-bg" aria-hidden="true" />
-      <DateTimeDisplay />
+      <div className="datetime-logo-stack">
+        <DateTimeDisplay />
+        <img
+          className="site-logo"
+          src={logoUpdated}
+          alt="VB"
+          width={538}
+          height={318}
+          decoding="async"
+        />
+      </div>
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      >
+        {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
+      </button>
       <header className="site-header">
         <button
           className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
@@ -86,14 +104,6 @@ export default function Navbar() {
           <span className="hamburger-line" />
           <span className="hamburger-line" />
           <span className="hamburger-line" />
-        </button>
-
-        <button
-          className="theme-toggle"
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-        >
-          {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </button>
 
         <nav className="navigation" aria-label="Main navigation">
