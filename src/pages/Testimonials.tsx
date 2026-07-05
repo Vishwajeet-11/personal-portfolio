@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { usePageMeta } from '../hooks/usePageMeta'
+import SiteFooter from '../components/SiteFooter'
 import '../styles/testimonial.css'
 
 interface Testimonial {
@@ -80,6 +81,13 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function Testimonials() {
+  usePageMeta({
+    title: 'Testimonials – Backend Developer Vishwajeet Bharadia',
+    description:
+      'What clients and colleagues say about working with Backend Developer Vishwajeet Bharadia on scalable systems and distributed architecture.',
+    path: '/testimonials',
+  })
+
   return (
     <>
       <h1 className="testimonials-header">Testimonials</h1>
@@ -100,9 +108,7 @@ export default function Testimonials() {
         ))}
       </div>
 
-      <p style={{ marginTop: '2rem' }}>
-        <Link to="/">← Back to Portfolio</Link>
-      </p>
+      <SiteFooter />
     </>
   )
 }

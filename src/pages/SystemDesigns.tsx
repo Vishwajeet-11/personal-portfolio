@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { usePageMeta } from '../hooks/usePageMeta'
+import SiteFooter from '../components/SiteFooter'
 import '../styles/system-designs.css'
 
 interface DesignItem {
@@ -43,6 +44,13 @@ const designs: DesignItem[] = [
 
 export default function SystemDesigns() {
   const [lightboxId, setLightboxId] = useState<string | null>(null)
+
+  usePageMeta({
+    title: 'System Design – Backend Developer Portfolio | Vishwajeet Bharadia',
+    description:
+      'System design diagrams by Backend Developer Vishwajeet Bharadia — e-commerce, KYC, streaming, and distributed messaging platforms.',
+    path: '/system-designs',
+  })
 
   return (
     <>
@@ -103,9 +111,7 @@ export default function SystemDesigns() {
         </div>
       )}
 
-      <p style={{ marginTop: '2rem' }}>
-        <Link to="/">← Back to Portfolio</Link>
-      </p>
+      <SiteFooter />
     </>
   )
 }

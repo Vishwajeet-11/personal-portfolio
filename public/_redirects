@@ -1,0 +1,10 @@
+# Legacy static HTML URLs → React routes
+/blog.html              /blog              301
+/projects.html           /projects          301
+/system-designs.html     /system-designs    301
+/testimonial.html        /testimonials      301
+/testimonials.html       /testimonials      301
+/index.html              /                  301
+
+# SPA fallback — must be last
+/*                       /index.html        200

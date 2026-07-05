@@ -1,12 +1,21 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CALCOM_USERNAME } from '../config'
+import { usePageMeta } from '../hooks/usePageMeta'
+import SiteFooter from '../components/SiteFooter'
 
 const CALCOM_URL = `https://cal.com/${CALCOM_USERNAME}`
 
 export default function Home() {
   const [meetingPanelOpen, setMeetingPanelOpen] = useState(false)
   const panelRef = useRef<HTMLDivElement>(null)
+
+  usePageMeta({
+    title: 'Vishwajeet Bharadia | Backend Developer',
+    description:
+      'Vishwajeet Bharadia is a Backend Developer who builds scalable systems, real-time applications, and RESTful APIs with Node.js, Go, Kafka, and Redis.',
+    path: '/',
+  })
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -27,8 +36,8 @@ export default function Home() {
     <>
       <h1>Vishwajeet Bharadia</h1>
       <p>
-        <strong>Software Engineer</strong> — I build backend systems, real-time
-        apps, and RESTful APIs.
+        <strong>Backend Developer</strong> — I design and build scalable backend
+        systems, real-time applications, and RESTful APIs.
       </p>
       <div className="social-links">
         <a
@@ -52,7 +61,7 @@ export default function Home() {
           </svg>
         </a>
         <a
-          href="https://drive.google.com/file/d/14QttHCqsiQKswLw8ejdUQpjW68Meam87/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1tsaPGIugvmFakalDSYmzjoFnNbXJdEIM/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
@@ -101,7 +110,7 @@ export default function Home() {
 
       <hr />
       <p>
-        I'm a backend engineer who builds scalable, resilient systems designed to
+        I'm a backend developer who builds scalable, resilient systems designed to
         handle real-world load. I specialize in designing RESTful and gRPC-based
         APIs, architecting pub/sub systems with Kafka and Redis Streams, and
         optimizing data flow with asynchronous patterns.
@@ -128,58 +137,34 @@ export default function Home() {
 
       <hr />
       <h2>Projects</h2>
-
-      <h3>UpRides — Real-Time Ride-Hailing Backend at Scale</h3>
       <p>
-        UpRides is a fully decoupled, event-driven backend inspired by
-        ride-hailing giants like Uber and Lyft. The system prioritizes:
+        Selected backend developer case studies — each project covers architecture,
+        scale, database design, and production tradeoffs.
       </p>
-
-      <h4>Architecture</h4>
-      <p>
-        Built with TypeScript and Node.js, using stateless, containerized
-        microservices connected via: • Kafka-based message queues and gRPC for
-        service communication • MongoDB as operational datastore for schema
-        flexibility and write throughput • Redis for caching, pub/sub messaging,
-        and ephemeral state (e.g. driver locations) • WebSocket layer for
-        real-time client updates like driver pings and ETAs
-      </p>
-
-      <h4>Resilience & Reliability</h4>
-      <p>
-        Services are designed to fail gracefully with: • Retries with exponential
-        backoff • Dead-letter queues • Circuit breakers for partial outage
-        handling • Transaction-safe and idempotent booking flows • JWT
-        authentication and surge-aware fare computation
-      </p>
-
-      <h4>Infrastructure & DevOps</h4>
-      <p>
-        • Docker containerization • Automated CI/CD via GitHub Actions •
-        Infrastructure as code • Secure secrets management and rotation
-      </p>
-
-      <h4>Real-World Focus</h4>
-      <p>
-        • Hot path optimizations for high-volume matching • Eventual consistency
-        in the dispatch layer • Clean separation of control and data planes •
-        Minimal latency and maximum uptime
-      </p>
-      <ul>
+      <ul className="project-teasers">
         <li>
-          <strong>Tech:</strong> Go, Node.js, JavaScript, Express, MongoDB, Socket.io, JWT,
-          TypeScript, Kafka, gRPC, Redis, Docker, GitHub Actions
+          <Link to="/projects/uprides">
+            <strong>UpRides</strong>
+          </Link>{' '}
+          — Real-time ride-hailing backend with Kafka, gRPC, Redis, and WebSockets
         </li>
         <li>
-          <strong>Features:</strong> Real-time driver-passenger matching, booking,
-          fare calculation, JWT auth
+          <Link to="/projects/helix">
+            <strong>Helix</strong>
+          </Link>{' '}
+          — Netflix-scale video streaming with chunk-based uploads and CDN delivery
         </li>
-        <li><strong>Goal:</strong> A scalable backend like Uber/Lyft</li>
+        <li>
+          <Link to="/projects/dirext">
+            <strong>Dirext</strong>
+          </Link>{' '}
+          — WhatsApp-scale messaging with Kafka, Flink, and consistent hashing
+        </li>
       </ul>
 
-      <p style={{ marginTop: '2rem' }}>
+      <p style={{ marginTop: '1.5rem' }}>
         <Link to="/projects" className="view-more-btn">
-          View More Projects →
+          View All Projects →
         </Link>
       </p>
 
@@ -245,6 +230,7 @@ export default function Home() {
         </a>
       </p>
 
+      <SiteFooter />
     </>
   )
 }

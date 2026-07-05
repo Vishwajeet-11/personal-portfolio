@@ -8,3 +8,6 @@
 
 /** Your Cal.com username (from cal.com/username) - e.g. "vishwajeetbharadia" */
 export const CALCOM_USERNAME = 'vishwajeet-11'
+
+/** Canonical site URL for SEO (sitemap, Open Graph, structured data) */
+export const SITE_URL = 'https://vishwajeet.online'

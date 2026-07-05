@@ -1,11 +1,20 @@
 import { useState } from 'react'
 import { blogPosts } from '../data/blogPosts'
+import { usePageMeta } from '../hooks/usePageMeta'
+import SiteFooter from '../components/SiteFooter'
 import '../styles/blog.css'
 
 const POSTS_PER_PAGE = 2
 
 export default function Blog() {
   const [currentPage, setCurrentPage] = useState(1)
+
+  usePageMeta({
+    title: 'Backend Developer Build Logs – Vishwajeet Bharadia',
+    description:
+      'Technical build logs from a Backend Developer on scalable architecture, microservices, rate limiting, and distributed systems.',
+    path: '/blog',
+  })
   const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE)
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE
   const visiblePosts = blogPosts.slice(
@@ -71,24 +80,7 @@ export default function Blog() {
         </button>
       </div>
 
-      <footer className="site-footer">
-        <section className="contact-info">
-          <h2>Contact</h2>
-          <address>
-            <p>
-              Email:{' '}
-              <a
-                href="mailto:vishwajeetbharadiya12@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Send email to vishwajeetbharadiya12@gmail.com"
-              >
-                vishwajeetbharadiya12@gmail.com
-              </a>
-            </p>
-          </address>
-        </section>
-      </footer>
+      <SiteFooter />
     </main>
   )
 }

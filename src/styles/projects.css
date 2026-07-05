@@ -22,6 +22,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .project-card.expanded {
   position: fixed;
   top: 50%;
@@ -87,6 +92,31 @@
   font-weight: 600;
   border-bottom: 2px solid var(--link-color);
   padding-bottom: 0.5rem;
+}
+
+.project-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-title a:hover {
+  text-decoration: underline;
+}
+
+.project-card-highlights {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.project-card-highlights li {
+  margin-bottom: 0.4rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
 }
 
 .project-description {
@@ -262,4 +292,85 @@
   .project-title {
     font-size: 1.05rem;
   }
+}
+
+/* Case study page */
+.case-study {
+  max-width: 760px;
+}
+
+.breadcrumb {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.breadcrumb a {
+  color: var(--link-color);
+}
+
+.case-study-header {
+  margin-bottom: 2rem;
+}
+
+.case-study-header h1 {
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.case-study-lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.case-study-overview,
+.case-study-section,
+.case-study-tech,
+.related-projects {
+  margin-bottom: 2.5rem;
+}
+
+.case-study-section h2,
+.case-study-overview h2,
+.case-study-tech h2,
+.related-projects h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--hr-color);
+  padding-bottom: 0.4rem;
+}
+
+.case-study-highlights {
+  margin-left: 1.25rem;
+  line-height: 1.7;
+}
+
+.case-study-highlights li {
+  margin-bottom: 0.5rem;
+}
+
+.related-projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.related-projects-list li {
+  border: 1px solid var(--hr-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.related-projects-list p {
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.case-study-back {
+  margin: 2rem 0 0;
 }

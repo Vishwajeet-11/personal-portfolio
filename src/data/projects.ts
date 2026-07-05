@@ -10,17 +10,31 @@ export interface ProjectTech {
 }
 
 export interface Project {
+  slug: string
+  shortTitle: string
   title: string
   description: string
+  seoDescription: string
+  highlights: string[]
   sections: ProjectSection[]
   tech: ProjectTech[]
 }
 
 export const projects: Project[] = [
   {
+    slug: 'uprides',
+    shortTitle: 'UpRides',
     title: 'UpRides — Real-Time Ride-Hailing Backend at Scale',
     description:
       'A fully decoupled, event-driven backend inspired by ride-hailing giants like Uber and Lyft. The system prioritizes scalability, resilience, and real-time performance.',
+    seoDescription:
+      'UpRides case study — a Backend Developer project building a ride-hailing backend with Node.js, Kafka, gRPC, Redis, MongoDB, and WebSockets at scale.',
+    highlights: [
+      'Event-driven microservices with Kafka and gRPC for inter-service communication',
+      'Real-time driver matching and ETAs via WebSockets and Redis pub/sub',
+      'Idempotent booking flows with circuit breakers and dead-letter queues',
+      'Containerized deployment with Docker and CI/CD via GitHub Actions',
+    ],
     sections: [
       {
         title: 'Architecture',
@@ -77,9 +91,19 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'helix',
+    shortTitle: 'Helix',
     title: 'Helix — Real-Time Video Streaming Platform at Scale',
     description:
       'A distributed video streaming platform inspired by Netflix and YouTube, designed to handle massive scale with billions of users, millions of daily video uploads, and petabytes of video storage. The system prioritizes read-heavy workloads, adaptive streaming, and global content delivery.',
+    seoDescription:
+      'Helix case study — a Backend Developer project designing a Netflix-scale video streaming platform with chunk-based uploads, CDN delivery, and distributed search.',
+    highlights: [
+      'Read-optimized architecture with a 1000:1 read-to-write ratio',
+      'Asynchronous video processing pipeline with multi-resolution encoding',
+      'Distributed inverted index for video search across billions of records',
+      'CDC-driven subscriber notifications and CDN integration for popular content',
+    ],
     sections: [
       {
         title: 'Functional Requirements',
@@ -169,9 +193,19 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: 'dirext',
+    shortTitle: 'Dirext',
     title: 'Dirext — Real-Time Chat Application at Scale',
     description:
       'A distributed messaging platform inspired by Facebook Messenger and WhatsApp, designed to handle billions of users sending millions of messages daily. The system prioritizes real-time message delivery, cross-device synchronization, and efficient message routing with minimal client connections.',
+    seoDescription:
+      'Dirext case study — a Backend Developer project building a WhatsApp-scale chat backend with Kafka, Flink, WebSockets, and consistent hashing.',
+    highlights: [
+      'Kafka-partitioned message pipeline delivering 100B messages per day',
+      'WebSocket connections with consistent hashing and ZooKeeper routing',
+      'Flink stream processing for real-time aggregation and HBase upserts',
+      'Cross-device sync with timestamp-ordered message persistence',
+    ],
     sections: [
       {
         title: 'Functional Requirements',
@@ -264,3 +298,11 @@ export const projects: Project[] = [
     ],
   },
 ]
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug)
+}
+
+export function getOtherProjects(slug: string): Project[] {
+  return projects.filter((project) => project.slug !== slug)
+}

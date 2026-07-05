@@ -1,0 +1,34 @@
+# Vishwajeet Bharadia — Backend Developer
+# https://vishwajeet.online
+
+> Vishwajeet Bharadia is a Backend Developer specializing in scalable backend systems,
+> real-time applications, RESTful and gRPC APIs, event-driven architecture, and
+> distributed systems (Kafka, Redis, MongoDB, PostgreSQL).
+
+## About
+
+- Name: Vishwajeet Bharadia
+- Role: Backend Developer
+- Focus: Node.js, Go, TypeScript, microservices, system design, distributed systems
+- Email: vishwajeetbharadiya12@gmail.com
+- GitHub: https://github.com/Vishwajeet-11
+- LinkedIn: https://linkedin.com/in/vishwajeetbharadia
+
+## Pages
+
+- Home: https://vishwajeet.online/
+- Projects: https://vishwajeet.online/projects
+- UpRides Case Study: https://vishwajeet.online/projects/uprides
+- Helix Case Study: https://vishwajeet.online/projects/helix
+- Dirext Case Study: https://vishwajeet.online/projects/dirext
+- Blog (Build Logs): https://vishwajeet.online/blog
+- System Designs: https://vishwajeet.online/system-designs
+- Testimonials: https://vishwajeet.online/testimonials
+
+## Key Topics
+
+- Backend development with Node.js and Go
+- Microservices and event-driven architecture
+- Real-time systems (WebSockets, Kafka, Redis)
+- System design (ride-hailing, e-commerce, messaging platforms)
+- REST APIs, gRPC, distributed tracing, observability
