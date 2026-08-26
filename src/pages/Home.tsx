@@ -61,7 +61,7 @@ export default function Home() {
           </svg>
         </a>
         <a
-          href="https://drive.google.com/file/d/1tsaPGIugvmFakalDSYmzjoFnNbXJdEIM/view?usp=sharing"
+          href="https://drive.google.com/file/d/1enpA9GTcqCjcXj5j0AKuFp8KO52c303y/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Resume"
