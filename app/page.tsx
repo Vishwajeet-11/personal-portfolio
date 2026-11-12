@@ -3,7 +3,7 @@ import { ProfileCard } from "@/components/profile-card";
 import { TechStack } from "@/components/tech-stack";
 import { GitHubActivity } from "@/components/github-activity";
 import { ProjectFilter } from "@/components/project-filter";
-import { BlogList } from "@/components/blog-list";
+import { ExperienceTimeline } from "@/components/experience-timeline";
 import { ContactPanel } from "@/components/contact-panel";
 
 export default function Home() {
@@ -18,14 +18,14 @@ export default function Home() {
       <GitHubActivity />
       <ProjectFilter />
       <section className="my-16">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between gap-4">
           <div>
-            <h2 className="bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-xl font-bold text-transparent">Recent Blogs</h2>
-            <p className="mt-1 text-sm text-neutral-400">Notes I plan to publish</p>
+            <h2 className="bg-gradient-to-r from-white to-neutral-400 bg-clip-text text-xl font-bold text-transparent">Experience</h2>
+            <p className="mt-1 text-sm text-neutral-400">Recent engineering roles and production impact</p>
           </div>
-          <Link href="/blogs" className="inline-flex items-center gap-1.5 rounded-full border border-neutral-800 px-3 py-1.5 text-xs text-neutral-400 hover:border-neutral-600 hover:text-white">View all</Link>
+          <Link href="/experience" className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-neutral-800 px-3 py-1.5 text-xs text-neutral-400 hover:border-neutral-600 hover:text-white">Full timeline</Link>
         </div>
-        <BlogList limit={2} />
+        <ExperienceTimeline limit={2} maxHighlights={3} />
       </section>
       <ContactPanel />
     </div>

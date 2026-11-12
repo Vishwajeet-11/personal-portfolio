@@ -11,7 +11,10 @@ const tones: Record<string, string> = {
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
   const tone = tones[project.category] ?? "#6ac8ff";
-  const points = project.details.split(/(?<=\.)\s+/).slice(0, 3);
+  const points = (project.details.includes("\n")
+    ? project.details.split("\n").map(point => point.replace(/^•\s*/, ""))
+    : project.details.split(/(?<=\.)\s+/)
+  ).slice(0, 3);
   return (
     <Link href={`/projects#${project.slug}`} className="group block h-full overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900/50 transition-all hover:-translate-y-0.5 hover:border-neutral-600">
       <div className="relative h-52 overflow-hidden border-b border-neutral-800 bg-[#0b0b0b] sm:h-56">

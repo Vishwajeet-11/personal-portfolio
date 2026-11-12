@@ -17,7 +17,13 @@ export default function ProjectsPage() {
           <article id={project.slug} key={project.slug} className="scroll-mt-24 border-b border-neutral-800 py-8">
             <p className="text-[11px] uppercase tracking-wider text-neutral-500">{String(index + 1).padStart(2, "0")} · {project.category} · {project.kind}</p>
             <h2 className="mt-2 text-2xl font-medium text-white">{project.name}</h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-400">{project.details}</p>
+            {project.details.includes("\n") ? (
+              <ul className="mt-3 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-neutral-400">
+                {project.details.split("\n").map(point => <li key={point}>{point.replace(/^•\s*/, "")}</li>)}
+              </ul>
+            ) : (
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-400">{project.details}</p>
+            )}
             <div className="mt-4 flex flex-wrap gap-2">
               {project.technologies.map(tech => <span key={tech} className="rounded-md border border-neutral-800 bg-neutral-900 px-2 py-1 text-[11px] text-neutral-300">{tech}</span>)}
             </div>

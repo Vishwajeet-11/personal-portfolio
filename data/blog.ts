@@ -1,6 +1,0 @@
-export type Article = { slug: string; title: string; excerpt: string; date: string; tags: string[]; readTime: string; status: "draft" | "published" };
-export const articles: Article[] = [
-  { slug: "designing-reliable-webhook-systems", title: "Designing Reliable Webhook Systems", excerpt: "Idempotency, retries, event ordering, and observability in payment and integration workflows.", date: "Coming soon", tags: ["Backend", "Payments", "System Design"], readTime: "8 min", status: "draft" },
-  { slug: "booking-and-escrow-lifecycle", title: "Designing a Booking and Escrow Lifecycle", excerpt: "Modeling state transitions, ledger entries, dispute handling, and payout orchestration.", date: "Coming soon", tags: ["Fintech", "Architecture"], readTime: "10 min", status: "draft" },
-  { slug: "building-kyc-as-a-service", title: "Building a Dedicated KYC Microservice", excerpt: "Separating identity verification workloads from the core application backend.", date: "Coming soon", tags: ["Python", "Microservices", "Computer Vision"], readTime: "7 min", status: "draft" }
-];
