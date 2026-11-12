@@ -10,7 +10,7 @@ export function SiteFooter() {
           <p className="mt-1 text-xs text-neutral-500">Software engineer building reliable backend systems.</p>
         </div>
         <nav className="flex flex-wrap gap-4 text-xs text-neutral-400">
-          <Link href="/blogs" className="hover:text-white">Blog</Link>
+          <Link href="/experience" className="hover:text-white">Experience</Link>
           <Link href="/projects" className="hover:text-white">Projects</Link>
           <Link href="/ai" className="hover:text-white">AI profile</Link>
           <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>

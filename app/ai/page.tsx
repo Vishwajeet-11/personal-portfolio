@@ -1,4 +1,5 @@
 import { profile, stack } from "@/data/profile";
+import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
 
 export const metadata = { title: "AI profile" };
@@ -20,6 +21,20 @@ export default function AIPage() {
         <section>
           <h2 className="text-base font-medium text-white">Technology</h2>
           {stack.map(group => <p key={group.title} className="mt-2"><span className="text-white">{group.title}:</span> {group.items.join(", ")}</p>)}
+        </section>
+        <section>
+          <h2 className="text-base font-medium text-white">Experience</h2>
+          {experiences.map(item => (
+            <div key={item.slug} className="mt-3 border-t border-neutral-800 pt-3">
+              <h3 className="text-white">{item.company} — {item.role}</h3>
+              <p className="text-xs text-neutral-400">{item.period} · {item.location}</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5">
+                {item.highlights.map(point => (
+                  <li key={point}>{point.replace(/\*\*/g, "")}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </section>
         <section>
           <h2 className="text-base font-medium text-white">Projects</h2>
